@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms" x:Class="Zewis.DayPage">
+    <ContentPage.Content>
+        <Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="72*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+            <Grid Grid.Row="0" RowSpacing="0" ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="9*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+        <BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="#E10074" />
+            <skia:SKCanvasView Grid.Row="0" Grid.Column="0" x:Name="backView" PaintSurface="backView_PaintSurface"/>
+        <BoxView Grid.Row="0" Grid.Column="1" BackgroundColor="#E10074" />
+        <Label Grid.Column="1" x:Name="m" Text="?" TextColor="White" FontSize="20" VerticalTextAlignment="Center" />
+        </Grid>  
+        <StackLayout Grid.Row="1" Padding="2" VerticalOptions="FillAndExpand">
+            <TableView>
+                <TableRoot>
+                    <TableSection x:Name="az" Title="Projekte an diesem Tag">
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+        <BoxView Grid.Row="2" BackgroundColor="White" CornerRadius="50"/>
+        <skia:SKCanvasView Grid.Row="2" x:Name="canvasView" PaintSurface="canvasView_PaintSurface"/>
+        <BoxView Grid.Row="3" BackgroundColor="#E10074" />
+        <Label Grid.Row="3" x:Name="sum" Text="  Summe: " TextColor="White" FontSize="20" VerticalTextAlignment="Center"/>
+            <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+               <Button HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1" Clicked="AddTime" WidthRequest="55" 
+                                        HeightRequest="55"                                
+                                        Text="+" 
+                                        FontSize="25" 
+                                        TextColor="Gray" 
+                                        BackgroundColor="White" 
+                                        BorderRadius="27"/>
+            </Grid>     
+    </Grid>
+    </ContentPage.Content>
+</ContentPage>
